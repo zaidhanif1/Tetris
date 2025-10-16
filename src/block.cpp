@@ -12,18 +12,18 @@ Block::Block(){
 }
 
 void Block::Draw(){
-    std::vector<Position> tiles = GetCells();
+    std::vector<Position> tiles = GetCellPositions();
     for (Position item: tiles){
         DrawRectangle(item.c * cellSize+1, item.r * cellSize+1, cellSize-1, cellSize-1, colors[id]);
     }
 };
 
 void Block::Move(int dx, int dy){
-    x = dx;
-    y = dy;
+    x += dx;
+    y += dy;
 }
 
-std::vector<Position> Block::GetCells(){
+std::vector<Position> Block::GetCellPositions(){
     std::vector<Position> tiles = cells[rotationState];
     std::vector<Position> movedTiles;
     for (Position item: tiles){
@@ -31,4 +31,20 @@ std::vector<Position> Block::GetCells(){
         movedTiles.push_back(newPost);
 }
     return movedTiles;
+}
+void Block::Rotate() {
+    rotationState++;
+    if (rotationState == (int)cells.size())
+    {
+        rotationState = 0;
+    }
+}
+void Block::UndoRotation() 
+{
+    rotationState--;
+    if (rotationState == 1)
+    {
+        rotationState = cells.size() - 1;
+    }
+    
 };

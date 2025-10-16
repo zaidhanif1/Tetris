@@ -8,6 +8,7 @@ class Grid{
     int grid[20][10];
     void Initialize();
     void Print();
+    bool isCellOutside(int r, int c);
     void Draw();
 
 private:

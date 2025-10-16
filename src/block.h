@@ -13,7 +13,9 @@ class Block{
         Block();
         void Draw();
         void Move(int dx, int dy);
-        std::vector<Position> GetCells();
+        void Rotate();
+        void UndoRotation();
+        std::vector<Position> GetCellPositions();
         int id;
         std::map<int, std::vector<Position>> cells;
 
