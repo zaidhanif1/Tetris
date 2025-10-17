@@ -12,6 +12,7 @@ class Game{
         void MoveBlockRight();
         void MoveBlockDown();
         bool gameOver;
+        int score;
         Grid grid;
 
     private:
@@ -20,6 +21,7 @@ class Game{
         void LockBlock();
         bool BlockFits();
         void Reset();
+        void UpdateScore(int rowsCleared, int moveDownPoints);
         std::vector<Block> blocks;
         Block currentBlock;
         Block nextBlock;
