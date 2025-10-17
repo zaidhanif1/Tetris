@@ -25,7 +25,7 @@ IBlock::IBlock(){
     cells[1] = {Position(0,1), Position(1,1), Position(2,1), Position(3,1)};
     cells[2] = {Position(0,0), Position(0,1), Position(0,2), Position(0,3)};
     cells[3] = {Position(0,1), Position(1,1), Position(2,1), Position(3,1)};
-    Move(-1, 3);
+    Move(0, 3);
 }
 
 OBlock::OBlock(){

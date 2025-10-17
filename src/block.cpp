@@ -42,9 +42,9 @@ void Block::Rotate() {
 void Block::UndoRotation() 
 {
     rotationState--;
-    if (rotationState == 1)
+    if (rotationState < 0)
     {
-        rotationState = cells.size() - 1;
+        rotationState = (int) cells.size() - 1;
     }
     
 };

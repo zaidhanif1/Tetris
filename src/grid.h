@@ -9,9 +9,14 @@ class Grid{
     void Initialize();
     void Print();
     bool isCellOutside(int r, int c);
+    bool IsCellEmpty(int r, int c);
+    int ClearFullRows();
     void Draw();
 
 private:
+    bool isRowFull(int r);
+    void ClearRow(int r);
+    void MoveRowDown(int r, int numRows);
     int numCols;
     int numRows;
     int cellSize;
