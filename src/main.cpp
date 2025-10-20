@@ -26,11 +26,9 @@ int main()
     Font font = LoadFontEx("Font/monogram.ttf", 64, 0, 0);
 
     Grid grid = Grid();
-    grid.Print();
-
     Game game = Game();
 
-    while(WindowShouldClose() == false){
+    while(!WindowShouldClose()){
         UpdateMusicStream(game.music);
         game.HandleInput();
         if(EventTriggered(0.3))

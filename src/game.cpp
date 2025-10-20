@@ -150,7 +150,7 @@ void Game::LockBlock()
     {
         grid.grid[item.r][item.c] = currentBlock.id;
     }
-    int rowsCleared = grid.ClearFullRows();
+    int rowsCleared = grid.ClearCompletedRows();
     if(rowsCleared > 0)
     {
         PlaySound(clearSound);
